@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementConsole", "RecrutementConsole\RecrutementConsole.csproj", "{8CE3021D-067C-40DA-A04C-268AE23A1807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementService", "RecrutementService\RecrutementService.csproj", "{322CCA33-B049-4CE5-95E6-701C24C8677F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementServicePattern", "RecrutementServicePattern\RecrutementServicePattern.csproj", "{E459FA6B-C9BF-43A9-96E4-235C41F656B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementData", "RecrutementData\RecrutementData.csproj", "{B9461E46-E669-4DEB-AE30-88CA3797BE07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementDomain", "RecrutementDomain\RecrutementDomain.csproj", "{AF66988F-25C3-4A45-A72D-323C8F4EB975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementWeb", "RecrutementWeb\RecrutementWeb.csproj", "{FBA47654-E597-4B78-80BC-9931F75527C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CE3021D-067C-40DA-A04C-268AE23A1807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE3021D-067C-40DA-A04C-268AE23A1807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE3021D-067C-40DA-A04C-268AE23A1807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE3021D-067C-40DA-A04C-268AE23A1807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322CCA33-B049-4CE5-95E6-701C24C8677F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322CCA33-B049-4CE5-95E6-701C24C8677F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322CCA33-B049-4CE5-95E6-701C24C8677F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322CCA33-B049-4CE5-95E6-701C24C8677F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E459FA6B-C9BF-43A9-96E4-235C41F656B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E459FA6B-C9BF-43A9-96E4-235C41F656B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E459FA6B-C9BF-43A9-96E4-235C41F656B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E459FA6B-C9BF-43A9-96E4-235C41F656B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9461E46-E669-4DEB-AE30-88CA3797BE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9461E46-E669-4DEB-AE30-88CA3797BE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9461E46-E669-4DEB-AE30-88CA3797BE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9461E46-E669-4DEB-AE30-88CA3797BE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA47654-E597-4B78-80BC-9931F75527C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA47654-E597-4B78-80BC-9931F75527C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA47654-E597-4B78-80BC-9931F75527C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA47654-E597-4B78-80BC-9931F75527C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {459B6D46-7E9E-4A09-937E-B21A6F5BCBAC}
+	EndGlobalSection
+EndGlobal
