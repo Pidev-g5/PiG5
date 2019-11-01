@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementConsole", "RecrutementConsole\RecrutementConsole.csproj", "{8CE3021D-067C-40DA-A04C-268AE23A1807}"
+	ProjectSection(ProjectDependencies) = postProject
+		{322CCA33-B049-4CE5-95E6-701C24C8677F} = {322CCA33-B049-4CE5-95E6-701C24C8677F}
+		{E459FA6B-C9BF-43A9-96E4-235C41F656B0} = {E459FA6B-C9BF-43A9-96E4-235C41F656B0}
+		{092A6178-6F41-4973-B7D8-EEBA49FCE390} = {092A6178-6F41-4973-B7D8-EEBA49FCE390}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementService", "RecrutementService\RecrutementService.csproj", "{322CCA33-B049-4CE5-95E6-701C24C8677F}"
 EndProject
@@ -13,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementData", "Recrutem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementDomain", "RecrutementDomain\RecrutementDomain.csproj", "{AF66988F-25C3-4A45-A72D-323C8F4EB975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementWeb", "RecrutementWeb\RecrutementWeb.csproj", "{FBA47654-E597-4B78-80BC-9931F75527C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutementWeb", "RecrutementWeb\RecrutementWeb.csproj", "{092A6178-6F41-4973-B7D8-EEBA49FCE390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +46,10 @@ Global
 		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF66988F-25C3-4A45-A72D-323C8F4EB975}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBA47654-E597-4B78-80BC-9931F75527C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBA47654-E597-4B78-80BC-9931F75527C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBA47654-E597-4B78-80BC-9931F75527C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBA47654-E597-4B78-80BC-9931F75527C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092A6178-6F41-4973-B7D8-EEBA49FCE390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092A6178-6F41-4973-B7D8-EEBA49FCE390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092A6178-6F41-4973-B7D8-EEBA49FCE390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092A6178-6F41-4973-B7D8-EEBA49FCE390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

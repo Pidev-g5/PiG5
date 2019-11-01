@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>af66988f-25c3-4a45-a72d-323c8f4eb975</ProjectGuid>
+    <ProjectGuid>{AF66988F-25C3-4A45-A72D-323C8F4EB975}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RecrutementDomain</RootNamespace>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,24 +34,121 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Blog.cs" />
+    <Compile Include="Entities\Candidat.cs" />
+    <Compile Include="Entities\Certification.cs" />
+    <Compile Include="Entities\Claim.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\Discussion.cs" />
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\Job.cs" />
+    <Compile Include="Entities\Like.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Test.cs" />
+    <Compile Include="Entities\TestMark.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\WorkExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Content\bootstrap-grid.css.map" />
+    <None Include="Content\bootstrap-grid.min.css.map" />
+    <None Include="Content\bootstrap-reboot.css.map" />
+    <None Include="Content\bootstrap-reboot.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <None Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\bootstrap.bundle.min.js.map" />
+    <None Include="Scripts\bootstrap.js.map" />
+    <None Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\esm\popper-utils.min.js.map" />
+    <None Include="Scripts\esm\popper.js.map" />
+    <None Include="Scripts\esm\popper.min.js.map" />
+    <None Include="Scripts\jquery-3.0.0.min.map" />
+    <None Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <None Include="Scripts\popper-utils.js.map" />
+    <None Include="Scripts\popper-utils.min.js.map" />
+    <None Include="Scripts\popper.js.map" />
+    <None Include="Scripts\popper.min.js.map" />
+    <None Include="Scripts\README.md" />
+    <None Include="Scripts\umd\popper-utils.js.map" />
+    <None Include="Scripts\umd\popper-utils.min.js.map" />
+    <None Include="Scripts\umd\popper.js.map" />
+    <None Include="Scripts\umd\popper.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" />
+</Project>
