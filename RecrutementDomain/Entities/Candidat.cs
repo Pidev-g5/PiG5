@@ -30,7 +30,8 @@ namespace RecrutementDomain.Entities
         public virtual ICollection<Certification> Certifications { get; set; }
         public virtual ICollection<WorkExperience> WorkExperiences { get; set; }
         public virtual ICollection<Education> Educations { get; set; }
-        
+        public virtual ICollection<TestMark> candidats { get; set; }
+
 
     }
 }

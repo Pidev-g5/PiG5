@@ -7,13 +7,13 @@ namespace RecrutementData.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0-preview1-19506-01")]
-    public sealed partial class fatm : IMigrationMetadata
+    public sealed partial class ttt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fatm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ttt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911011407201_fatm"; }
+            get { return "201911041425287_ttt"; }
         }
         
         string IMigrationMetadata.Source

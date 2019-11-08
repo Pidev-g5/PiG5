@@ -63,8 +63,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServices\IApplicationService.cs" />
+    <Compile Include="IServices\IQuestionService.cs" />
+    <Compile Include="IServices\ITestMarkService.cs" />
+    <Compile Include="IServices\ITestService.cs" />
     <Compile Include="IServices\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\QuestionService.cs" />
+    <Compile Include="Services\TestMarkService.cs" />
+    <Compile Include="Services\TestService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>

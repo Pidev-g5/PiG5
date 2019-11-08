@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Application.cs" />
     <Compile Include="Entities\Blog.cs" />
     <Compile Include="Entities\Candidat.cs" />
     <Compile Include="Entities\Certification.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Entities\Like.cs" />
     <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Quiz.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Entities\TestMark.cs" />
     <Compile Include="Entities\User.cs" />

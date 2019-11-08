@@ -263,6 +263,9 @@ namespace RecrutementDomain.Entities
     public class User : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
 
+       
+
+        public int Id { get; set; }
         public String FName { get; set; }
         public String LName { get; set; }
         public String Address { get; set; }

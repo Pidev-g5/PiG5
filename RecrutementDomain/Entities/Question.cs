@@ -19,9 +19,13 @@ namespace RecrutementDomain.Entities
 
         public String Rep4 { get; set; }
         public String RepCorrect { get; set; }
-        public virtual Test test { get; set; }
-        [ForeignKey("test")]
+        
         public int TestId { get; set; }
+        [ForeignKey("test")]
+        public virtual Test test { get; set; }
+       
+        
+        
 
     }
 }

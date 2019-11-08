@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RecrutementService.Services
 {
-    class UserService : Service<User>, IUserService
+    public class UserService : Service<User>, IUserService
     {
         private static IDataBaseFactory dbfactor = new DataBaseFactory();
         private static IUnitOfWork wow = new UnitOfWork(dbfactor);
@@ -19,17 +19,7 @@ namespace RecrutementService.Services
         {
 
         }
-        public User FindRoleByName(string name)
-        {
-            IEnumerable<User> ls = this.GetMany().OrderBy(p => p.FName).Where(p => p.UserName == name).Take(1);
-            User c = new User();
-            foreach (var i in ls)
-            {
-                c.FName = i.FName;
-                c.Role = i.Role;
-            }
-            return c;
-        }
+
     }
 }
 

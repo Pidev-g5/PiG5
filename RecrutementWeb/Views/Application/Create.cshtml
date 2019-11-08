@@ -1,0 +1,114 @@
+﻿@model RecrutementDomain.Entities.Application
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAcceuil.cshtml";
+}
+
+<h2>Create</h2>
+<section class="our-dashbord dashbord">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 col-xl-3 dn-smd">
+
+                <div class="dashbord_nav_list">
+                    <ul>
+                        <li><a href="page-employer-dashboard.html"><span class="flaticon-dashboard"></span> Dashboard</a></li>
+                        <li><a href="page-employer-profile.html"><span class="flaticon-profile"></span> Company Profile</a></li>
+                        <li class="active"><a href="page-employer-post-job.html"><span class="flaticon-resume"></span> Post a New Job</a></li>
+                        <li><a href="page-employer-manage-job.html"><span class="flaticon-paper-plane"></span> Manage Jobs</a></li>
+                        <li><a href="page-employer-resume.html"><span class="flaticon-analysis"></span> Shortlisted Resumes</a></li>
+                        <li><a href="page-employer-packages.html"><span class="flaticon-favorites"></span> Packages</a></li>
+                        <li><a href="page-employer-transactions.html"><span class="flaticon-chat"></span> Transactions</a></li>
+                        <li><a href="page-employer-change-password.html"><span class="flaticon-locked"></span> Change Password</a></li>
+                        <li><a href="page-log-reg.html"><span class="flaticon-logout"></span> Logout</a></li>
+                        <li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Application</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Prenom, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Prenom, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OfferId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.OfferId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OfferId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CandId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CandId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CandId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-lg btn-thm" />
+                    </div>
+                </div>
+            </div>
+                <br />
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+
+
+</section>
+
+<a class="scrollToHome text-thm" href="#"><i class="flaticon-rocket-launch"></i></a>
+</div>
+<!-- Wrapper End -->
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.mmenu.all.js"></script>
+<script type="text/javascript" src="js/ace-responsive-menu.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/snackbar.min.js"></script>
+<script type="text/javascript" src="js/simplebar.js"></script>
+<script type="text/javascript" src="js/tagsinput.js"></script>
+<script type="text/javascript" src="js/parallax.js"></script>
+<script type="text/javascript" src="js/scrollto.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="js/jquery.counterup.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/progressbar.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/timepicker.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyABqK-5ngi3F1hrEsk7-mCcBPsjHM5_Gj0"></script>
+<script type="text/javascript" src="js/googlemaps1.js"></script>
+<!-- Custom script for all pages -->
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+

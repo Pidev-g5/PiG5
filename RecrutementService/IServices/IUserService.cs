@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace RecrutementService.IServices
 {
-    interface IUserService : IService<User>
+ 
+       public interface IUserService : IService<User>
     {
     }
 }
