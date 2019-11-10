@@ -6,48 +6,86 @@
     Layout = "~/Views/Shared/_LayoutAcceuil.cshtml";
 }
 
+<body>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+  
 
-<div class="form-horizontal">
+    <!-- Our Dashbord -->
+    <section class="cnddte_fvrt our-dashbord dashbord">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-4 col-xl-3 dn-1199">
 
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="dashbord_nav_list">
+                        <ul>
+                            <li><a href="page-candidates-dashboard.html"><span class="flaticon-dashboard"></span> Dashboard</a></li>
+                            <li><a href="page-candidates-profile.html"><span class="flaticon-profile"></span> Profile</a></li>
+                            <li><a href="page-candidates-my-resume.html"><span class="flaticon-resume"></span> Resume</a></li>
+                            <li class="active"><a href="page-candidates-applied-jobs.html"><span class="flaticon-paper-plane"></span> Applicants List</a></li>
+                            <li><a href="page-candidates-cv-manager.html"><span class="flaticon-analysis"></span> CV Manager</a></li>
+                            <li ><a href="page-candidates-favourite-jobs.html"><span class="flaticon-favorites"></span> Tests</a></li>
+                            <li><a href="page-candidates-message.html"><span class="flaticon-chat"></span> Messages</a></li>
+                            <li><a href="page-candidates-review.html"><span class="flaticon-rating"></span> Reviews</a></li>
+                            <li><a href="page-candidates-job-alert.html"><span class="flaticon-alarm"></span> Job Alerts</a></li>
+                            <li><a href="page-candidates-change-password.html"><span class="flaticon-locked"></span> Change Password</a></li>
+                            <li><a href="page-log-reg.html"><span class="flaticon-logout"></span> Logout</a></li>
+                            <li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
+                        </ul>
+                    </div>
+                    <div class="skill_sidebar_widget">
+                        <h4>Skills Percentage <span class="float-right font-weight-bold">85%</span></h4>
+                        <p>Put value for "Cover Image" field to increase your skill up to "15%"</p>
+                        <ul class="skills">
+                            <li class="progressbar3" data-width="85" data-target="85"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <h4>Please do confirm the applicant status</h4>
+
+                        @Html.HiddenFor(model => model.AppId)
+
+                        <div class="form-group">
+                           
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ApplicationStatus, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ApplicationStatus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
 
 
 
 
-    <br /><br />
-    <h4>Please do confirm the applicator status</h4>
-
-    @Html.HiddenFor(model => model.AppId)
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ApplicationStatus, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ApplicationStatus, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ApplicationStatus, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
 
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-6">
+                                    <input type="submit" value="Confirm" class="btn btn-lg btn-thm" />
+
+                                </div>
+                                <div class="col-md-offset-2 col-md-6">
+                                    <button class="btn btn-lg btn-thm" > @Html.ActionLink("Cancel", "ShowApp")</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                }
 
 
-
-
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Confirm" class="btn btn-lg btn-thm" />
-        </div>
-    </div>
-</div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "ShowApp")
-</div>
 

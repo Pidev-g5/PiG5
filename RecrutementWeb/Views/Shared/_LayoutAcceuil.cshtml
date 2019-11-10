@@ -75,7 +75,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="@Url.Action("JobList","Home")"><span class="title">Find A Job</span></a>
+                        <a href="@Url.Action("Index","Application")"><span class="title">Find A Job</span></a>
                         <!-- Level Two-->
 
                     </li>
@@ -109,6 +109,10 @@
                         <a href="#"><span class="title">Candidates</span></a>
                         <ul>
                             <li>
+                                <a href="@Url.Action("ShowAppCand","Application")">My profile</a>
+                                
+                            </li>
+                            <li>
                                 <a href="#">Candidates List</a>
                                 <ul>
                                     <li><a href="page-candidates-list-v1.html">List V1</a></li>
@@ -116,14 +120,7 @@
                                     <li><a href="page-candidates-list-v3.html">List V3</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#">Candidates Single</a>
-                                <ul>
-                                    <li><a href="page-candidates-single-v1.html">Single v1</a></li>
-                                    <li><a href="page-candidates-single-v2.html">Single v2</a></li>
-                                    <li><a href="page-candidates-single-v3.html">Single v3</a></li>
-                                </ul>
-                            </li>
+
                             <li>
                                 <a href="#">Candidates Admin</a>
                                 <ul>
@@ -159,7 +156,7 @@
                             <li><a href="page-faq.html">Faq</a></li>
                             <li><a href="page-how-it-works.html">How It Works</a></li>
                             <li><a href="page-invoice.html">Invoice</a></li>
-                            <li><a href="@Url.Action("LoginRegister","Home")">Login/Register</a></li>
+                            <li><a href="@Url.Action("ShowApp","Application")">Dashboard</a></li>
                             <li><a href="page-pricing.html">Pricing</a></li>
                             <li><a href="page-terms-and-policies.html">Terms And Policies</a></li>
                             <li><a href="page-ui-element.html">UI Elements</a></li>
@@ -168,113 +165,21 @@
                     <li class="last">
                         <a href="page-employer-post-job.html"><span class="title">Post a Job</span></a>
                     </li>
+                    
+                        <li class="last  ">
+                            <a href="@Url.Action("ShowApp","Application")">Dashboard</a>
+                        </li>
+                    
+                   
                 </ul>
-                <ul class="sign_up_btn pull-right dn-smd mt10">
-                    <li><a href="#" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter">Log<span class="dn-md">in</span>/Reg<span class="dn-md">ister</span></a></li>
-                </ul><!-- Button trigger modal -->
+
             </nav>
         </div>
     </header>
     <!-- Modal -->
-    <div class="sign_up_modal modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <ul class="sign_up_tab nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Register</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="login_form">
-                            <form action="#">
-                                <div class="heading">
-                                    <h3 class="text-center">Quick Login</h3>
-                                    <p class="text-center">Don't have an account? <a class="text-thm" href="#">Sign Up!</a></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                                    <a class="tdu text-thm float-right" href="#">Forgot Password?</a>
-                                </div>
-                                <button type="submit" class="btn btn-log btn-block btn-thm">Login</button>
-                                <hr>
-                                <div class="row mt40">
-                                    <div class="col-lg">
-                                        <button type="submit" class="btn btn-block color-white bgc-fb"><i class="fa fa-facebook float-left mt5"></i> Facebook</button>
-                                    </div>
-                                    <div class="col-lg">
-                                        <button type="submit" class="btn btn-block color-white bgc-gogle"><i class="fa fa-google float-left mt5"></i> Google</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="sign_up_form">
-                            <div class="heading">
-                                <h3 class="text-center">Create New Account</h3>
-                                <p class="text-center">Don't have an account? <a class="text-thm" href="#">Sign Up!</a></p>
-                            </div>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="User Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control" id="exampleInputPhone1" placeholder="Phone Number">
-                                </div>
-                                <div class="form-group">
-                                    <select id="inputState1" class="form-control">
-                                        <option selected>Select Sector</option>
-                                        <option>Web Developer</option>
-                                        <option>Ui/Ux Designer</option>
-                                        <option>Photoeditor</option>
-                                        <option>Graphics Designer</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                                </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                    <label class="form-check-label" for="exampleCheck2">By Registering You Confirm That You Accept <a class="text-thm" href="page-terms-and-policies.html">Terms & Conditions</a> And <a class="text-thm" href="page-terms-and-policies.html">Privacy Policy</a></label>
-                                </div>
-                                <button type="submit" class="btn btn-log btn-block btn-dark">Register</button>
-                                <hr>
-                                <div class="row mt40">
-                                    <div class="col-lg">
-                                        <button type="submit" class="btn btn-block color-white bgc-fb"><i class="fa fa-facebook float-left mt5"></i> Facebook</button>
-                                    </div>
-                                    <div class="col-lg">
-                                        <button type="submit" class="btn btn-block color-white bgc-gogle"><i class="fa fa-google float-left mt5"></i> Google</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- Side navigation links ADMIN -->
- 
     <!-- Side navigation links CANDIDATE -->
-  
     <!-- Main Header Nav For Mobile -->
     <div id="page" class="stylehome1 h0">
         <div class="mobile-menu">
@@ -358,6 +263,8 @@
                 <li>
                     <span>Candidates</span>
                     <ul>
+                        <li><a href="@Url.Action("ShowAppCand","Application")">My profile</a></li>
+                        
                         <li>
                             <span>Candidates List</span>
                             <ul>
@@ -366,14 +273,7 @@
                                 <li><a href="page-candidates-list-v3.html">List V3</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <span>Candidates Single</span>
-                            <ul>
-                                <li><a href="page-candidates-single-v1.html">Single v1</a></li>
-                                <li><a href="page-candidates-single-v2.html">Single v2</a></li>
-                                <li><a href="page-candidates-single-v3.html">Single v3</a></li>
-                            </ul>
-                        </li>
+
                         <li>
                             <span>Candidates Admin</span>
                             <ul>

@@ -12,7 +12,7 @@ namespace RecrutementWeb.Models
         public String TestName { get; set; }
 
         public TypeTest TypeTest { get; set; }
-        public StatusTest StatusTest { get; set; }
+        public String StatusTest { get; set; }
         public DateTime DateTest { get; set; }
         public virtual ICollection<Candidat> candidats { get; set; }
         public virtual ICollection<Question> questions { get; set; }

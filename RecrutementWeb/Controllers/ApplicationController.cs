@@ -201,6 +201,23 @@ namespace RecrutementWeb.Controllers
         }
 
 
+        // GET: Test/Delete/5
+        public ActionResult Delete(int id)
+        {
+
+            return View(aps.GetById(id));
+        }
+        // POST: Product/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, Application p)
+        {
+
+            p = aps.GetById(id);
+            aps.Delete(p);
+            aps.Commit();
+            return RedirectToAction("ShowApp");
+        }
+
 
     }
 }

@@ -57,20 +57,11 @@ namespace RecrutementWeb.Controllers
             return View();
         }
 
+      
 
-     /*  public ActionResult TestMark(TestModel tm)
-        {
-            Test Mark = new Test();
-            Mark.score = tm.score;
-            Mark.TestId = tm.idd;
-           
-            cs.Add(Mark);
-            cs.Commit();
-            return View();
-        }
-        */
 
-        public async Task<ActionResult> ScrapTechnique()
+
+       /* public async Task<ActionResult> ScrapTechnique()
 
         {
             var httpclient = new HttpClient();
@@ -117,7 +108,7 @@ namespace RecrutementWeb.Controllers
                         // r.repcorrect = cor[1].InnerHtml.Trim();
                         /*    var m= rep.ChildNodes.ToArray();
                         list.Add(m[3].InnerText.Trim());*/
-                    }
+                  /*  }
                     else
                     {
                         var j = rep.SelectNodes(".//td[@class='bix-td-option']").ToArray();
@@ -145,7 +136,7 @@ namespace RecrutementWeb.Controllers
             iqs.Commit();
 
             return RedirectToAction("ShowTests");
-        }
+        }*/
 
 
 
@@ -304,6 +295,11 @@ namespace RecrutementWeb.Controllers
 
         }
 
+
+        public ActionResult TestResult()
+        {
+            return View();
+        }
        
     }
    

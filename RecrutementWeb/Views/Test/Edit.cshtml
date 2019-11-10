@@ -3,53 +3,82 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Test</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-       
+<!-- Our Dashbord -->
+<section class="cnddte_fvrt our-dashbord dashbord">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 col-xl-3 dn-1199">
 
-
-
-
-
-        @Html.HiddenFor(model => model.TestId)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TestName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TestName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TestName, "", new { @class = "text-danger" })
+                <div class="dashbord_nav_list">
+                    <ul>
+                        <li><a href="page-candidates-dashboard.html"><span class="flaticon-dashboard"></span> Dashboard</a></li>
+                        <li><a href="page-candidates-profile.html"><span class="flaticon-profile"></span> Profile</a></li>
+                        <li><a href="page-candidates-my-resume.html"><span class="flaticon-resume"></span> Resume</a></li>
+                        <li><a href="@Url.Action("ShowApp","Application")"><span class="flaticon-paper-plane"></span> Applicants List</a></li>
+                        <li><a href="page-candidates-cv-manager.html"><span class="flaticon-analysis"></span> CV Manager</a></li>
+                        <li class="active"><a href="@Url.Action("ShowTests","Test")"><span class="flaticon-favorites"></span> Tests</a></li>
+                        <li><a href="page-candidates-message.html"><span class="flaticon-chat"></span> Messages</a></li>
+                        <li><a href="page-candidates-review.html"><span class="flaticon-rating"></span> Reviews</a></li>
+                        <li><a href="page-candidates-job-alert.html"><span class="flaticon-alarm"></span> Job Alerts</a></li>
+                        <li><a href="page-candidates-change-password.html"><span class="flaticon-locked"></span> Change Password</a></li>
+                        <li><a href="page-log-reg.html"><span class="flaticon-logout"></span> Logout</a></li>
+                        <li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
+                    </ul>
+                </div>
+                <div class="skill_sidebar_widget">
+                    <h4>Skills Percentage <span class="float-right font-weight-bold">85%</span></h4>
+                    <p>Put value for "Cover Image" field to increase your skill up to "15%"</p>
+                    <ul class="skills">
+                        <li class="progressbar3" data-width="85" data-target="85"></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TypeTest, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TypeTest, "", new { @class = "text-danger" })
-            </div>
-        </div>
-       
+                <div class="form-horizontal">
+                    <h3>Edit Test</h3>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
 
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "ShowTests")
-</div>
+
+
+                    @Html.HiddenFor(model => model.TestId)
+
+                    <div class="form-group">
+                        <h4>Test Name</h4>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TestName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TestName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h4>Test Type</h4>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TypeTest, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
+                    <p>
+                        <input type="submit" value="Save changes" class="btn btn-lg btn-thm" />
+
+                        <button class="btn btn-lg btn-thm"> @Html.ActionLink("Cancel", "ShowTests")</button>
+                    </p>
+                           
+                </div>
+            }
+
+            
 

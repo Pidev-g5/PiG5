@@ -1,0 +1,18 @@
+﻿@model IEnumerable<RecrutementWeb.Models.TestModel>
+@{
+    ViewBag.Title = "Score";
+    Layout = "~/Views/Shared/_LayoutAcceuil.cshtml";
+}
+
+<h2>Score</h2>
+
+@using (Html.BeginForm())
+{
+
+    foreach (var i in Model)
+{
+
+            @Html.DisplayFor(modelItem => i.score)
+
+}
+}

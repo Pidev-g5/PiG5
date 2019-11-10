@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201911081710169_score.designer.cs">
       <DependentUpon>201911081710169_score.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911090031117_stat.cs" />
+    <Compile Include="Migrations\201911090031117_stat.designer.cs">
+      <DependentUpon>201911090031117_stat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -189,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911081710169_score.resx">
       <DependentUpon>201911081710169_score.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911090031117_stat.resx">
+      <DependentUpon>201911090031117_stat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
