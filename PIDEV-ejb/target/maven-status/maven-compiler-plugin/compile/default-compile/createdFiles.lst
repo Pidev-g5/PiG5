@@ -1,0 +1,8 @@
+model\TestMark.class
+model\Test.class
+model\Question.class
+model\Job.class
+model\Interview.class
+model\Application.class
+model\Person.class
+model\User.class
