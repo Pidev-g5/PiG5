@@ -62,18 +62,18 @@
                 <div class="form-group">
                     <h4>Test Type</h4>
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EnumDropDownListFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.TypeTest, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
+                @* <div class="form-group">
             @Html.LabelFor(model => model.DateTest, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DateTest, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DateTest, "", new { @class = "text-danger" })
             </div>
-        </div>
-                
+        </div>*@
+
                 <div class="form-group">
                     <p>
                         <input type="submit" value="Create" class="btn btn-thm" />

@@ -4,6 +4,7 @@ using RecrutementDomain.Entities;
 using RecrutementService.IServices;
 using RecrutementService.Services;
 using RecrutementWeb.Models;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -298,9 +299,49 @@ namespace RecrutementWeb.Controllers
 
         public ActionResult TestResult()
         {
+            {
+                TestModel tm = new TestModel();
+                Test c = new Test();
+                List<TestModel> l = new List<TestModel>();
+                List<Question> lq = new List<Question>();
+                c = cs.GetAll().OrderByDescending(t => t.questions.Count).First();
+                tm.TestName = c.TestName;
+                tm.TypeTest = c.TypeTest;
+                lq = c.questions.OrderBy(x => Guid.NewGuid()).Take(20).ToList();
+                tm.questions = lq;
+                l.Add(tm);
+
+                return View(l);
+            }
+        }
+
+        public ActionResult TestLang()
+        {
+            {
+                TestModel tm = new TestModel();
+                Test c = new Test();
+                List<TestModel> l = new List<TestModel>();
+                List<Question> lq = new List<Question>();
+                c = cs.GetAll().OrderByDescending(t => t.questions.Count).First();
+                tm.TestName = c.TestName;
+                tm.TypeTest = c.TypeTest;
+                lq = c.questions.OrderBy(x => Guid.NewGuid()).Take(20).ToList();
+                tm.questions = lq;
+                l.Add(tm);
+
+                return View(l);
+            }
+        }
+
+        public ActionResult TestPsy()
+        {
             return View();
         }
-       
+         public ActionResult PrintAll ()
+        {
+            var q = new ActionAsPdf("TestPsy");
+            return q;
+        }
     }
    
 }

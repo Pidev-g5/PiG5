@@ -30,9 +30,13 @@ namespace RecrutementData
         public DbSet<Like> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Interview> Iterviews { get; set; }
+        public DbSet<Reserved> Reserveds { get; set; }
+        public DbSet<Fixed> Fixeds { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<Application> Applications { get; set; }
         public DbSet<TestMark> TestMarks { get; set; }
+        public DbSet<Person> persons { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -42,6 +46,10 @@ namespace RecrutementData
             modelBuilder.Conventions.Add(new DateTimeConvention());
             modelBuilder.Entity<CustomUserRole>().HasKey(t => t.UserId);
             modelBuilder.Configurations.Add(new QuestionConfiguration());
+            modelBuilder.Configurations.Add(new PersonConfiguration());
+            modelBuilder.Configurations.Add(new InterviewConfiguration());
+            modelBuilder.Configurations.Add(new ReservedConfiguration());
+            modelBuilder.Configurations.Add(new FixedConfiguration());
             modelBuilder.Configurations.Add(new TestConfiguration());
             modelBuilder.Configurations.Add(new TestMarkConfiguration());
             modelBuilder.Configurations.Add(new ApplicationConfiguration());

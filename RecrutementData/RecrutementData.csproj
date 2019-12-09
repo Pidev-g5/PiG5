@@ -64,7 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\ApplicationConfiguration.cs" />
+    <Compile Include="Configurations\FixedConfiguration.cs" />
+    <Compile Include="Configurations\InterviewConfiguration.cs" />
+    <Compile Include="Configurations\PersonConfiguration.cs" />
     <Compile Include="Configurations\QuestionConfiguration.cs" />
+    <Compile Include="Configurations\ReservedConfiguration.cs" />
     <Compile Include="Configurations\TestConfiguration.cs" />
     <Compile Include="Configurations\TestMarkConfiguration.cs" />
     <Compile Include="Context.cs" />
@@ -77,33 +81,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201911022321397_tessst.cs" />
-    <Compile Include="Migrations\201911022321397_tessst.designer.cs">
-      <DependentUpon>201911022321397_tessst.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911041425287_ttt.cs" />
-    <Compile Include="Migrations\201911041425287_ttt.designer.cs">
-      <DependentUpon>201911041425287_ttt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911072111273_app.cs" />
-    <Compile Include="Migrations\201911072111273_app.designer.cs">
-      <DependentUpon>201911072111273_app.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911080140317_appstat.cs" />
-    <Compile Include="Migrations\201911080140317_appstat.designer.cs">
-      <DependentUpon>201911080140317_appstat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911080220352_sr.cs" />
-    <Compile Include="Migrations\201911080220352_sr.designer.cs">
-      <DependentUpon>201911080220352_sr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911081710169_score.cs" />
-    <Compile Include="Migrations\201911081710169_score.designer.cs">
-      <DependentUpon>201911081710169_score.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911090031117_stat.cs" />
-    <Compile Include="Migrations\201911090031117_stat.designer.cs">
-      <DependentUpon>201911090031117_stat.cs</DependentUpon>
+    <Compile Include="Migrations\201912072016542_gj.cs" />
+    <Compile Include="Migrations\201912072016542_gj.designer.cs">
+      <DependentUpon>201912072016542_gj.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,29 +156,10 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911022321397_tessst.resx">
-      <DependentUpon>201911022321397_tessst.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911041425287_ttt.resx">
-      <DependentUpon>201911041425287_ttt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911072111273_app.resx">
-      <DependentUpon>201911072111273_app.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911080140317_appstat.resx">
-      <DependentUpon>201911080140317_appstat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911080220352_sr.resx">
-      <DependentUpon>201911080220352_sr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911081710169_score.resx">
-      <DependentUpon>201911081710169_score.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911090031117_stat.resx">
-      <DependentUpon>201911090031117_stat.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912072016542_gj.resx">
+      <DependentUpon>201912072016542_gj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

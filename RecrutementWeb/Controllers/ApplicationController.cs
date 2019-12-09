@@ -6,7 +6,9 @@ using RecrutementWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -195,6 +197,35 @@ namespace RecrutementWeb.Controllers
             {
                 aps.Update(p1);
                 aps.Commit();
+                var verifyurl = "/Signup/VerifiyAccount/";
+                var link = Request.Url.AbsolutePath.Replace(Request.Url.PathAndQuery, verifyurl);
+
+                var fromEmail = new MailAddress("fatma.dayeg@esprit.tn", "CareerUp");
+                var toEmail = new MailAddress("dayeg.fatma@gmail.com");
+                var FromEmailPassword = "172jft1681";
+
+                string subject = "Response On Job Application";
+
+                string body = "We have respond on your job application! Go check your Result. " +
+                    "<br/><a href = '" + link + "'>" + link + "</a>";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromEmail.Address, FromEmailPassword),
+                    Timeout = 20000
+                };
+                using (var message = new MailMessage(fromEmail, toEmail)
+                {
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = true
+
+                }) smtp.Send(message);
                 return RedirectToAction("ShowApp");
             }
             return RedirectToAction("ShowApp");

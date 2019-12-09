@@ -72,11 +72,15 @@
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Discussion.cs" />
     <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\Fixed.cs" />
+    <Compile Include="Entities\Interview.cs" />
     <Compile Include="Entities\Job.cs" />
     <Compile Include="Entities\Like.cs" />
     <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Quiz.cs" />
+    <Compile Include="Entities\Reserved.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Entities\TestMark.cs" />
     <Compile Include="Entities\User.cs" />

@@ -1,103 +1,251 @@
-﻿@model IEnumerable<RecrutementDomain.Entities.Test>
-
+﻿@model IEnumerable<RecrutementWeb.Models.TestModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "TestResult";
     Layout = "~/Views/Shared/_LayoutAcceuil.cshtml";
 }
+<script src="@Url.Content("~/Content/LayoutAcceui/")vendor/jquery/jquery.min.js"></script>
 
-<h2>Index</h2>
-<body>
+<main>
+    <br /> <br /><br />
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #333;
+        }
 
-    <div class="header stylehome1 dashbord_mobile_logo">
-        <img class="nav_logo_img img-fluid float-left mt25" src="images/header-logo.png" alt="header-logo.png">
-        <a class="bg-thm" href="#menu"><span></span></a>
+        #container {
+            width: 400px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 32px;
+    </style>
+
+    <script>
+        // two global variables
+        var secondsRemaining;
+        var intervalHandle;
+
+
+
+
+        function tick() {
+            // grab the h1
+            var timeDisplay = document.getElementById("time");
+
+            // turn seconds into mm:ss
+            var min = Math.floor(secondsRemaining / 60);
+            var sec = secondsRemaining - (min * 60);
+
+            // add a leading zero (as a string value) if seconds less than 10
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            // concatenate with colon
+            var message = min + ":" + sec;
+            // now change the display
+            timeDisplay.innerHTML = message;
+
+            // stop if down to zero
+            if (secondsRemaining === 0) {
+                alert("Your time is over!");
+                $("#bout").click()
+
+                clearInterval(intervalHandle);
+                resetPage();
+            }
+            // subtract from seconds remaining
+            secondsRemaining--;
+        }
+
+        function startCountdown() {
+            // get contents of the "minutes" text box
+            var minutes = 0.5;
+            // check if not a number
+            if (isNaN(minutes)) {
+                alert("Please enter a number!");
+                return;
+            }
+            // how many seconds?
+            secondsRemaining = minutes * 60;
+            // every second, call the "tick" function
+            intervalHandle = setInterval(tick, 1000);
+            // hide the form
+        }
+
+        // as soon as the page is loaded...
+        $(document).ready(function () {
+            // create input text box and give it an id of "minutes"
+            var inputMinutes = document.createElement("input");
+            inputMinutes.setAttribute("id", "minutes");
+            inputMinutes.setAttribute("type", "text");
+            // create a button
+            var startButton = document.createElement("input");
+            startButton.setAttribute("type", "button");
+            startButton.setAttribute("value", "Start Countdown");
+            startCountdown();
+
+            // add to the DOM, to the div called "inputArea"
+        });
+
+    </script>
+    <div id="container">
+
+
+        <h1 id="time">0:00</h1>
+
     </div>
-    </div><!-- /.mobile-menu -->
-    </div>
-
-    <!-- Our Dashbord -->
-    <section class="cnddte_fvrt our-dashbord dashbord">
+    @using (Html.BeginForm("TestLang", "Test"))
+    {
+        @Html.AntiForgeryToken()
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-lg-4 col-xl-3 dn-1199">
+            <h2 class="font-bold mt-lg-5 mb-5 pb-4"><strong>Language Test </strong></h2>
 
-                    <div class="dashbord_nav_list">
-                        <ul>
-                            <li><a href="page-candidates-dashboard.html"><span class="flaticon-dashboard"></span> Dashboard</a></li>
-                            <li><a href="page-candidates-profile.html"><span class="flaticon-profile"></span> Profile</a></li>
-                            <li><a href="page-candidates-my-resume.html"><span class="flaticon-resume"></span> Resume</a></li>
-                            <li><a href="page-candidates-applied-jobs.html"><span class="flaticon-paper-plane"></span> Applied Jobs</a></li>
-                            <li><a href="page-candidates-cv-manager.html"><span class="flaticon-analysis"></span> CV Manager</a></li>
-                            <li class="active"><a href="page-candidates-favourite-jobs.html"><span class="flaticon-favorites"></span> Favourite Jobs</a></li>
-                            <li><a href="page-candidates-message.html"><span class="flaticon-chat"></span> Messages</a></li>
-                            <li><a href="page-candidates-review.html"><span class="flaticon-rating"></span> Reviews</a></li>
-                            <li><a href="page-candidates-job-alert.html"><span class="flaticon-alarm"></span> Job Alerts</a></li>
-                            <li><a href="page-candidates-change-password.html"><span class="flaticon-locked"></span> Change Password</a></li>
-                            <li><a href="page-log-reg.html"><span class="flaticon-logout"></span> Logout</a></li>
-                            <li><a href="#"><span class="flaticon-rubbish-bin"></span> Delete Profile</a></li>
-                        </ul>
+            <!--Section: Background variants-->
+            <section class="mb-5 pb-5">
+                <h4 class="my-5 dark-grey-text font-bold">PS: You should answer fastly, if the countdown finishes you won't be able to answer anymore </h4>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <!--Card indigo-->
+                        <!--/.Card indigo-->
+                        <br>
+                        <!--Card pink-->
+                        @foreach (var item in Model)
+                        {
+                            var a = 0;
+
+                            foreach (var i in item.questions)
+                            {
+                                <h4>
+                                    Select
+                                    <input name="RepCorrect @a" type="radio" id="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.RepCorrect)" value="@Html.DisplayFor(modelItem => i.RepCorrect)" checked="checked">
+
+                                    the correct answer
+                                </h4>
+                                <div class="list-group z-depth-1">
+                                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="font-bold mb-3 mt-2">
+                                                @Html.DisplayFor(modelItem => i.qQst)<br />
+                                            </h5>
+                                            <small class="text-muted">@a</small>
+                                        </div>
+                                        <p class="mb-1">
+                                            <input name="group @a" type="radio" id="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep1)" value="@Html.DisplayFor(modelItem => i.Rep1)">
+                                            <label for="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep1)">@Html.DisplayFor(modelItem => i.Rep1)</label>
+                                        </p>
+                                        <p class="mb-1">
+                                            <input name="group @a" type="radio" id="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep2)" value="@Html.DisplayFor(modelItem => i.Rep2)">
+                                            <label for="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep2)">
+                                                @Html.DisplayFor(modelItem => i.Rep2)
+                                            </label>
+                                        </p>
+                                        <p class="mb-1">
+                                            <input name="group @a" type="radio" id="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep3)" value="@Html.DisplayFor(modelItem => i.Rep3)">
+                                            <label for="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep3)">
+                                                @Html.DisplayFor(modelItem => i.Rep3)
+                                            </label>
+                                        </p>
+                                        <p class="mb-1">
+                                            <input name="group @a" type="radio" id="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep4)" value="@Html.DisplayFor(modelItem => i.Rep4)">
+                                            <label for="@Html.DisplayFor(modelItem => i.QstId)@Html.DisplayFor(modelItem => i.Rep4)">
+                                                @Html.DisplayFor(modelItem => i.Rep4)
+                                            </label>
+                                        </p>
+                                        <small class="text-muted">Question @a</small>
+                                    </div>
+                                </div>
+
+                                a++;
+
+                            }
+
+
+                        }
+
+
+
+                        <br>
+
+                        <input id="bout" value="confirmer" type="submit" class="btn btn-thm">
+                        <script>
+                                $("#bout").click(function () {
+                                    alert("Click on Ok");
+                                    var i = 0;
+                                    var note = 0;
+                                    alert("These are your ansewrs:")
+                                    for (i = 0; i < 3; i++) {
+                                        alert($('input[name="group ' + i + '"]:checked').val());
+
+                                        if ($('input[name="group ' + i + '"]:checked').val() == $('input[name="RepCorrect ' + i + '"]:checked').val()) {
+                                            note++;
+                                        }
+
+
+                                    }
+                                    alert(note);
+                                    if (note < 3) {
+                                        alert("Sorry you failed your test !");
+                                        for (i = 0; i < 20; i++) {
+                                            alert("Your process is done ! You can not go further !")
+                                        }
+
+                                    } else alert("Congratulations you succeeded !");
+                                }
+
+                                   @* document.getElementById("score").value = note;
+                                    document.getElementById("ide").value = 1;*@
+                                );
+                        </script>
+
                     </div>
-                    <div class="skill_sidebar_widget">
-                        <h4>Skills Percentage <span class="float-right font-weight-bold">85%</span></h4>
-                        <p>Put value for "Cover Image" field to increase your skill up to "15%"</p>
-                        <ul class="skills">
-                            <li class="progressbar3" data-width="85" data-target="85"></li>
-                        </ul>
+
+
+                    <div class="col-md-6">
+
+                        <!--Card red-->
+                        <!--/.Card red-->
+                        <br>
+                        <!--Card success-->
+                        <!--/.Card success-->
+                        <br>
+                        <!--Card mdb-->
+                        <!--/.Card mdb-->
+                        <!--Card transparent-->
+                        <!--/.Card transparent-->
+
                     </div>
                 </div>
 
-               
+            </section>
+            <!--Section: Background variants-->
+            <!--Section: Basic examples-->
+            <!--Section: Basic examples-->
+            <!--Section: Docs link-->
+            <section class="pb-4">
 
-                    <div class="col-xl-9">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="mb30">
-                                   Your process now is done !
-                                </h2>
-
-                            </div>
-
-
-
-
-                        </div>
-               
-                   
-               
+                <!--Panel-->
+                <div class="card text-center">
+                    <h3 class="card-header primary-color white-text">Full documentation</h3>
+                    <div class="card-body">
+                        <p class="card-text">Read the full documentation for these components.</p>
+                        <a href="https://mdbootstrap.com/components/panels/" target="_blank" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+                <!--/.Panel-->
 
 
-            </div>
+            </section>
+            <!--Section: Docs link-->
+
         </div>
-        </div>
-        </div>
-        </div>
-    </section>
+    }
 
-    <a class="scrollToHome text-thm" href="#"><i class="flaticon-rocket-launch"></i></a>
-    </div>
-    <!-- Wrapper End -->
-    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mmenu.all.js"></script>
-    <script type="text/javascript" src="js/ace-responsive-menu.js"></script>
-    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="js/snackbar.min.js"></script>
-    <script type="text/javascript" src="js/simplebar.js"></script>
-    <script type="text/javascript" src="js/parallax.js"></script>
-    <script type="text/javascript" src="js/scrollto.js"></script>
-    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
-    <script type="text/javascript" src="js/jquery.counterup.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/progressbar.js"></script>
-    <script type="text/javascript" src="js/slider.js"></script>
-    <script type="text/javascript" src="js/timepicker.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <!-- Custom script for all pages -->
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
+</main>
 
 
 

@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <h4>Test Type</h4>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EnumDropDownListFor(model => model.TypeTest, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.TypeTest, "", new { @class = "text-danger" })
                         </div>
                     </div>
